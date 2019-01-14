@@ -1,0 +1,35 @@
+version: '3'
+services:
+  db:
+    container_name: docktober_db
+    image: mysql:5.7
+    ports:
+      - "4306:3306"
+    environment:
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+    volumes: 
+      - /Exising/Folder/InYour/Computer:/var/lib/mysql # Make sure the volume on the left is a folder that exists on your host machine for persistent database files.
+
+  php:
+    container_name: docktober_php
+    build:
+      context: ./Docker/php-fpm
+    volumes:
+      - ./src:/var/www/html # Points /src folder to html folder in php container
+    links:
+      - db
+
+  web:
+    container_name: docktober_web
+    build: 
+      context: ./Docker/nginx
+    ports:
+      - "8000:80"
+    volumes:
+      - ./src:/var/www/html # Points /src folder to html folder in web container
+    links:
+      - php
+
