@@ -18,7 +18,7 @@ services:
     build:
       context: ./Docker/php-fpm
     volumes:
-      - ./octobercms:/var/www/html # Points /src folder to html folder in php container
+      - ./octobercms:/var/www/html/octobercms
     links:
       - db
 
@@ -29,7 +29,7 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./octobercms:/var/www/html # Points /src folder to html folder in web container
+      - ./octobercms:/var/www/html/octobercms
     links:
       - php
 
