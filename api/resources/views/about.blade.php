@@ -1,9 +1,10 @@
 @extends('layout')
 
 @section('title')
-    Home
+    About us
 @endsection
 
 @section('content')
-    <p>Home</p>    
+    <h1>About us</h1>
+    <p>Something about us.</p>   
 @endsection
