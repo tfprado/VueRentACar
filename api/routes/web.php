@@ -14,3 +14,7 @@
 Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'PagesController@contact');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
