@@ -19,6 +19,7 @@ services:
       context: ./Docker/php-fpm
     volumes:
       - ./octobercms:/var/www/html/octobercms
+      - ./api:/var/www/html/api
     links:
       - db
 
@@ -28,8 +29,10 @@ services:
       context: ./Docker/nginx
     ports:
       - "8000:80"
+      - "8080:8080"
     volumes:
       - ./octobercms:/var/www/html/octobercms
+      - ./api:/var/www/html/api
     links:
       - php
 
