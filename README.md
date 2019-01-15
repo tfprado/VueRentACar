@@ -12,6 +12,15 @@
 * `git clone URL my-app-name`
 * copy `.env-example` contents into a `.env` file in the root directory.
 * Do the same for the `octobercms` directory
+> The DB username and password variables should match in both files when changed. Keep DB_HOST as db
+* run `composer install` and `php artisan october:update` from `octobercms` folder.
+* run `composer update` from api folder.
+* run `docker compose up -d --build` from project root.
+
+You can now access octobercms pages from localhost:8000.
+**For laravel app:**
+* `sudo vim /etc/hosts`
+* Add `127.0.0.1 localhost.api` to your computers `hosts` file.
 
 > **important**: Make sure to switch the `volume:` section on the docker-compose file to a directory that exists on your machine so changes to database are saved!
 
