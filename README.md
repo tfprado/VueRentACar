@@ -19,8 +19,8 @@
 
 You can now access octobercms pages from localhost:8000.
 **For laravel app:**
-* `sudo vim /etc/hosts`
-* Add `127.0.0.1 localhost.api` to your computers `hosts` file.
+localhost:8080
+
 
 > **important**: Make sure to switch the `volume:` section on the docker-compose file to a directory that exists on your machine so changes to database are saved!
 
