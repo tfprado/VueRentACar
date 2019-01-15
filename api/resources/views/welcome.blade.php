@@ -85,6 +85,7 @@
                 </div>
 
                 <div class="links">
+                    <a href="http://localhost:8000">Back to OctoberCMS</a>
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
