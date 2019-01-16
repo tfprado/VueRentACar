@@ -7,9 +7,19 @@ use App\Project;
 
 class ProjectsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');  // ->only(['store', 'update'])
+                                    // ->except(['show'])
+    }
     public function index()
     {
-        $projects = Project::all();
+        // auth()->id();   // 4
+        // auth()->user(); // User
+        // auth()->check(); // Boolean
+        // if(auth()->guest())
+        $projects = Project::where('owner_id', auth()->id())->get();
 
         return view('projects.index', compact('projects'));
     }
@@ -18,13 +28,13 @@ class ProjectsController extends Controller
     {
         return view('projects.create', compact('projects'));
     }
-    
+
     public function show(Project $project)
     {
         return view('projects.show', compact('project'));
     }
 
-    public function store () 
+    public function store ()
     {
         // $attributes = request()->validate([
         //     'title' => ['required', 'min:3'],
@@ -39,27 +49,27 @@ class ProjectsController extends Controller
                 'description' => ['required', 'min:3']
             ])
         );
-        
+
         return redirect('/projects');
     }
 
-    public function edit(Project $project) 
+    public function edit(Project $project)
     {
-        return view('projects.edit', compact('project'));        
+        return view('projects.edit', compact('project'));
     }
 
     public function update(Project $project)
     {
 
         $project->update(request(['title', 'description']));
-        
+
         return redirect('/projects');
     }
 
     public function destroy(Project $project)
     {
         $project->delete();
-        
+
         return redirect('/projects');
     }
 
