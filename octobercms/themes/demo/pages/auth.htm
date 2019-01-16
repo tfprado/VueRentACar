@@ -1,0 +1,26 @@
+title = "LDAP test"
+url = "/auth"
+layout = "default"
+==
+{##}
+<div class="jumbotron">
+    <div class="container">
+        <h1>LDAP Test</h1>
+    </div>
+</div>
+
+<div class="container">
+    <form method="POST" action="http://localhost:8080/projects">
+        <div>
+            <input type="text" name="title" placeholder="Project Title">
+        </div>
+
+        <div>
+            <textarea name="description" placeholder="Project Description" cols="30" rows="10"></textarea>
+        </div>
+
+        <div>  
+            <button type="submit">Create Project</button>
+        </div>
+    </form>
+</div>

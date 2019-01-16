@@ -19,4 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('projects', 'ProjectsController@index');
+Route::get('/projects', 'ProjectsController@index');
+Route::post('/projects', 'ProjectsController@store');
+Route::get('/projects/create', 'ProjectsController@create');
+
+Route::get('/test-ldap', function () {
+    return view('ldap');
+});
