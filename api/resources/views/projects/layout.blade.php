@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Projects</title>
+
+    <style>
+        .is-complete {
+            text-decoration: line-through;
+        }
+    </style>
+    
 </head>
 <body>
-    <h1>Projects</h1>
-    
-    <ul>
-        @foreach ($projects as $project)
-        <li>
-            <a href="/projects/{{ $project->id }}">
-                {{ $project->title }}
-            </a>
-        </li>
-        @endforeach
-    </ul>
+    <div class="container">
+        @yield('content')
+    </div>
 </body>
 </html>

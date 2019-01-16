@@ -19,9 +19,25 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/projects', 'ProjectsController@index');
-Route::post('/projects', 'ProjectsController@store');
-Route::get('/projects/create', 'ProjectsController@create');
+/**
+ * GET /projects (index)
+ * POST /projects (store)
+ * GET /projects/create (create)
+ * Get /projects/1/edit (show)
+ * PATCH /projects/1 (update)
+ * DELETE /projects/1 (destroy)
+ */
+// Route::get('/projects', 'ProjectsController@index');
+// Route::get('/projects/create', 'ProjectsController@create');
+// Route::get('/projects/{project}', 'ProjectsController@show');
+// Route::post('/projects', 'ProjectsController@store');
+// Route::get('/projects/{project}/edit', 'ProjectsController@edit');
+// Route::patch('/projects/{project}', 'ProjectsController@update');
+// Route::delete('/projects/{project}', 'ProjectsController@destroy');
+Route::resource('/projects', 'ProjectsController');   // Same as the about lines
+
+Route::post('projects/{project}/tasks', 'ProjectTasksController@store');
+Route::patch('tasks/{task}', 'ProjectTasksController@update');
 
 Route::get('/test-ldap', function () {
     return view('ldap');
