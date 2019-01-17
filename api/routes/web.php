@@ -48,6 +48,8 @@ Route::post('projects/{project}/tasks', 'ProjectTasksController@store');    // T
 Route::post('/completed-tasks/{task}', 'CompletedTasksController@store');   // ->middleware('auth')
 Route::delete('/completed-tasks/{task}', 'CompletedTasksController@destroy');
 
-Route::get('/test-ldap', function () {
-    return view('ldap');
-});
+// Route::get('/test-ldap', function () {
+//     return view('ldap');
+// });
+
+Route::get('/test-ldap', 'LdapController@index');
