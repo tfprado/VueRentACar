@@ -86,9 +86,8 @@
 
                 <div class="links">
                     <a href="http://localhost:8000">Back to OctoberCMS</a>
-                    <a href="/">Home</a>
-                    <a href="/about">About Us</a>
-                    <a href="/contact">Contact Example</a>
+                    <a href="/">Welcome Page</a>
+                    <a href="/test-ldap">LDAP</a>
                 </div>
 
                 <div>

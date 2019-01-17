@@ -1,22 +1,17 @@
-@extends('layout')
+@extends('layouts.master')
 
 @section('title')
-    Home
+    Welcome
 @endsection
 
 @section('content')
-    <h1>Home {{ $foo }}</h1>
+    <div class="container">
 
-    <!-- php way to add tasks -->
-    <!-- <ul>
-        <?php foreach ($tasks as $task) : ?>
-            <li><?= $task; ?></li>
-        <?php endforeach; ?>
-    </ul> -->
-
-    <ul>
-        @foreach($tasks as $task)
-        <li>{{ $task }}</li>
-        @endforeach
-    </ul>
+        <h1>Welcome</h1>
+        <div class="row">
+            <div class="col-12">
+                <p>The value of variable 'foo' is: {{ $foo }}</p>
+            </div>
+        </div>
+    </div>
 @endsection

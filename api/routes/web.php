@@ -19,8 +19,6 @@
 //     return view('welcome');
 // });
 Route::get('/', 'PagesController@home'); //->middleware('can:update,project'); to authenticate if user can see a project here on the route file
-Route::get('/about', 'PagesController@about');
-Route::get('/contact', 'PagesController@contact');
 
 Auth::routes();
 
@@ -53,3 +51,15 @@ Route::delete('/completed-tasks/{task}', 'CompletedTasksController@destroy');
 // });
 
 Route::get('/test-ldap', 'LdapController@index');
+Route::post('/ldap-login', 'LdapController@login');
+
+/**
+ * Demo Registration and Sessions
+ */
+Route::get('/test-register', 'RegistrationController@create')->name('test-register');
+Route::post('/test-register', 'RegistrationController@store');
+
+Route::get('/test-login', 'SessionsController@create');
+Route::post('/test-login', 'SessionsController@store');
+Route::get('/test-logout', 'SessionsController@destroy');
+
