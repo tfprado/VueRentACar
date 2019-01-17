@@ -18,7 +18,7 @@
 
 //     return view('welcome');
 // });
-Route::get('/', 'PagesController@home');
+Route::get('/', 'PagesController@home'); //->middleware('can:update,project'); to authenticate if user can see a project here on the route file
 Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'PagesController@contact');
 
