@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\KensingtonAuth;
 
 use Illuminate\Http\Request;
 use Adldap\Laravel\Facades\Adldap;
 use App\User;
+use App\Http\Controllers\Controller;
 
 class SessionsController extends Controller
 {

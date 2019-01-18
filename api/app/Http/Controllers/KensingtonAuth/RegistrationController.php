@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\KensingtonAuth;
 
 use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\Controller;
 
 class RegistrationController extends Controller
 {
@@ -14,12 +17,12 @@ class RegistrationController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'username' => 'required',
-            'email' => 'required|email',
+            'username' => 'required|unique:users|max:255',
+            'email' => 'required|email|max:255',
             'password' => 'required|confirmed'
         ]);
 
-        $user = User::create(request(['name', 'email', 'password']));
+        $user = User::create(request(['username', 'email', 'password']));
 
         auth()->login($user);
 

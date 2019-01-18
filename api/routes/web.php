@@ -40,11 +40,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/projects/{project}/edit', 'ProjectsController@edit');
 // Route::patch('/projects/{project}', 'ProjectsController@update');
 // Route::delete('/projects/{project}', 'ProjectsController@destroy');
-Route::resource('/projects', 'ProjectsController');   // Same as the above lines
+Route::resource('/projects', 'Projects\ProjectsController');   // Same as the above lines
 
-Route::post('projects/{project}/tasks', 'ProjectTasksController@store');    // To add middleware here instead of in a controller
-Route::post('/completed-tasks/{task}', 'CompletedTasksController@store');   // ->middleware('auth')
-Route::delete('/completed-tasks/{task}', 'CompletedTasksController@destroy');
+Route::post('projects/{project}/tasks', 'Projects\ProjectTasksController@store');    // To add middleware here instead of in a controller
+Route::post('/completed-tasks/{task}', 'Projects\CompletedTasksController@store');   // ->middleware('auth')
+Route::delete('/completed-tasks/{task}', 'Projects\CompletedTasksController@destroy');
 
 // Route::get('/test-ldap', function () {
 //     return view('ldap');
@@ -56,10 +56,10 @@ Route::post('/ldap-login', 'LdapController@login');
 /**
  * Demo Registration and Sessions
  */
-Route::get('/test-register', 'RegistrationController@create')->name('test-register');
-Route::post('/test-register', 'RegistrationController@store');
+Route::get('/register-kensington', 'KensingtonAuth\RegistrationController@create');
+Route::post('/register-kensington', 'KensingtonAuth\RegistrationController@store');
 
-Route::get('/test-login', 'SessionsController@create');
-Route::post('/test-login', 'SessionsController@store');
-Route::get('/test-logout', 'SessionsController@destroy');
+Route::get('/login-kensington', 'KensingtonAuth\SessionsController@create');
+Route::post('/login-kensington', 'KensingtonAuth\SessionsController@store');
+Route::get('/logout-kensington', 'KensingtonAuth\SessionsController@destroy');
 

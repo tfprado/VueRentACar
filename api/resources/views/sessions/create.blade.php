@@ -5,7 +5,7 @@
 
         <h2>Log In</h2>
 
-        <form method="POST" action="/test-login">
+        <form method="POST" action="/login-kensington">
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="username">Username:</label>

@@ -27,7 +27,7 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::before(function ($user){
             //this is an admin
-            return $user->id == 2; // ->isAdmin(); method would be another option
+            // return $user->id == 2; // ->isAdmin(); method would be another option
         });
     }
 }

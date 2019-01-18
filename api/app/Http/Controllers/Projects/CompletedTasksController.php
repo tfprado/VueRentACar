@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Projects;
 
 use Illuminate\Http\Request;
 
 use App\Task;
+use App\Http\Controllers\Controller;
 
 class CompletedTasksController extends Controller
 {

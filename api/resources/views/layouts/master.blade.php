@@ -47,14 +47,14 @@
                                 <a class="nav-link font-weight-bold" href="#">Hi {{ auth()->user()->username }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/test-logout">Log Out</a>
+                                <a class="nav-link" href="/logout-kensington">Log Out</a>
                             </li>
                             @else
                             <li class="nav-item">
-                                <a class="nav-link" href="/test-login">Log In</a>
+                                <a class="nav-link" href="/login-kensington">Log In</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/test-register">Register</a>
+                                <a class="nav-link" href="/register-kensington">Register</a>
                             </li>
                         @endif
                     </ul>
