@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 
 class SessionsController extends Controller
 {
+    public $setLogin;
 
     public function setLoginType()
     {
@@ -17,6 +18,7 @@ class SessionsController extends Controller
 
         if (array_key_exists("adlogin",$loginType))
         {
+            $this->setLogin = 'ad';
             return back()->with('Login Type', 'ad');
         }
         else if (array_key_exists("locallogin",$loginType))
@@ -24,7 +26,6 @@ class SessionsController extends Controller
             return back()->with('Login Type', 'local');
         }
         return back();
-        dd($loginType);
     }
 
     public function searchAd()
