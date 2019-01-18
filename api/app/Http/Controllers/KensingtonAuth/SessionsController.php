@@ -9,6 +9,16 @@ use App\Http\Controllers\Controller;
 
 class SessionsController extends Controller
 {
+    public function searchAd()
+    {
+
+    }
+
+    public function getDbUser()
+    {
+        
+    }
+
     public function create()
     {
         return view('sessions.create');
