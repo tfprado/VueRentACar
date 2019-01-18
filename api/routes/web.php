@@ -54,12 +54,15 @@ Route::get('/test-ldap', 'LdapController@index');
 Route::post('/ldap-login', 'LdapController@login');
 
 /**
- * Demo Registration and Sessions
+ * Kensington Registration and Sessions
  */
 Route::get('/register-kensington', 'KensingtonAuth\RegistrationController@create');
 Route::post('/register-kensington', 'KensingtonAuth\RegistrationController@store');
 
-Route::get('/login-kensington', 'KensingtonAuth\SessionsController@create');
+Route::get('/login-kensington', 'KensingtonAuth\SessionsController@create')->name('login-kensington');
 Route::post('/login-kensington', 'KensingtonAuth\SessionsController@store');
 Route::get('/logout-kensington', 'KensingtonAuth\SessionsController@destroy');
+
+Route::post('/login-kensington-local', 'KensingtonAuth\SessionsController@searchAd');
+Route::post('/login-type', 'KensingtonAuth\SessionsController@setLoginType');
 

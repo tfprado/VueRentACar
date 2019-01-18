@@ -22,8 +22,8 @@ class ProjectsController extends Controller
         // auth()->user(); // User
         // auth()->check(); // Boolean
         // if(auth()->guest())
-        
-        
+
+
         // $projects = Project::where('owner_id', auth()->id())->get();
         // same as
         // $projects = auth()->user()->projects;
