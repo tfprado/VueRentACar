@@ -42,6 +42,9 @@
                         <li class="nav-item">
                             <a href="/projects/create" class="nav-link">Create a Project</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/scheduler" class="nav-link">Scheduler Demo</a>
+                        </li>
 
                     </ul>
 
