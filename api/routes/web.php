@@ -66,7 +66,9 @@ Route::get('/login-kensington', 'KensingtonAuth\SessionsController@create')->nam
 Route::post('/login-kensington', 'KensingtonAuth\SessionsController@store');
 Route::get('/logout-kensington', 'KensingtonAuth\SessionsController@destroy');
 
-// Route::post('/login-kensington-local', 'KensingtonAuth\SessionsController@searchAd');
+Route::post('/login-kensington-enterprise', 'KensingtonAuth\SessionsController@searchAd');
 Route::post('/login-kensington-local', 'KensingtonAuth\SessionsController@getDbUser');
+// handles validation errors on form submit
+Route::get('/login-type', 'KensingtonAuth\SessionsController@create');
 Route::post('/login-type', 'KensingtonAuth\SessionsController@setLoginType');
 

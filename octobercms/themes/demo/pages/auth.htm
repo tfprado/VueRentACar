@@ -1,6 +1,7 @@
 title = "LDAP test"
 url = "/auth"
 layout = "default"
+is_hidden = 0
 ==
 {##}
 <div class="jumbotron">
@@ -10,17 +11,24 @@ layout = "default"
 </div>
 
 <div class="container">
-    <form method="POST" action="http://localhost:8080/projects">
+    <form method="POST" action="http://localhost:8080/api/october">
         <div>
-            <input type="text" name="title" placeholder="Project Title">
+            <input type="text" name="username" placeholder="Username">
         </div>
 
         <div>
-            <textarea name="description" placeholder="Project Description" cols="30" rows="10"></textarea>
+            <input type="password" name="password" placeholder="Password">
         </div>
 
         <div>  
-            <button type="submit">Create Project</button>
+            <button type="submit">Login</button>
         </div>
+        <ul>
+        	{% for error in errors.all() %}
+        		<li>
+        			{{ error }}	
+        		</li>
+        	{% endfor %}
+        </ul>
     </form>
 </div>

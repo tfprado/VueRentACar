@@ -6,6 +6,7 @@ use App\KensingtonUser;
 use Illuminate\Http\Request;
 use Adldap\Laravel\Facades\Adldap;
 use App\User;
+use App\Role;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -43,8 +44,20 @@ class LdapController extends Controller
         // dd($ldapUser);
         if (Adldap::auth()->attempt(request('username'), request('password')))
         {
-            dd('Sucess!');
             $ldapUser = Adldap::search()->users()->find($credentials['username']);
+            $userGroups = $ldapUser->getGroups();
+            $role = null;
+            foreach ($userGroups as $group) {
+                if ($group->getCommonName() == 'Webdev')
+                {
+                    $role = Role::where('name', 'developer')->first();
+                }
+            }
+            if(is_null($role))
+            {
+                $role = Role::where('name', 'local')->first();
+            }
+            dd($role);
             $userName = $credentials['username'];
             $userPassword = $credentials['password'];
             if ($ldapUser->getAttribute('mail', 0) == null)

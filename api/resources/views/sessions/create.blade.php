@@ -2,44 +2,30 @@
 
 @section('content')
     <div class="container">
-
-        {{-- {{ session('Login Type')->has('ad') ? '/login-kensington-ad' : '/login-kensington-local' }} --}}
-        {{-- @if (session('Login Type'))
-            <p>
-                {{ $setLogin->has('ad') ? 'HAS AD' : 'DOES NOT HAVE AD' }}
-            </p>
-        @endif --}}
         <h2 class="text-center">Log In To Kensington!</h2>
 
-        @if (session('Login Type'))
-            <h4>Currently authenticating as a {{ session('Login Type') }} user</h4>
-        @endif
-
-        @if (empty(session('Login Type')))
-            <form class="form-inline mt-3" method="POST" action="/login-type">
+        @if (empty($setLogin))
+            <form class="mt-3" method="POST" action="/login-type">
                 {{ csrf_field() }}
-                <label for="dropDownMenuButton" class="col-sm-6 col-form-label">Please Select a user type:</label>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
-                                    User Type
-                                </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <div class="dropdown-item">
-                            <label for="adlogin" class="checkbox">Enterprise:  <input class="ml-1" type="checkbox" name="adlogin" onChange="this.form.submit()"></label>
-                        </div>
-                        <div class="dropdown-item">
-                            <label for="locallogin" class="checkbox">Local:  <input class="ml-1" type="checkbox" name="locallogin" onChange="this.form.submit()"></label>
-                        </div>
-                        <a class="dropdown-item" href="#">Local</a>
-                        <a class="dropdown-item" href="#">Enterprise</a>
+                <div class="form-group row">
+                    <div class="col-2 offset-4">
+                        <label>Choose a login type:</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="adLogin" name="adLogin" class="custom-control-input" onChange="this.form.submit()">
+                        <label class="custom-control-label" for="adLogin">Enterprise</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="localLogin" name="localLogin" class="custom-control-input" onChange="this.form.submit()">
+                        <label class="custom-control-label" for="localLogin">Local</label>
                     </div>
                 </div>
             </form>
         @endif
 
-        @if (session('Login Type'))
-            <form class="mt-3" method="POST" action="/login-kensington-local">
+        @isset ($loginType)
+            <h4> Currently authenticating as a {{ $loginType }} user</h4>
+            <form class="mt-3" method="POST" action="/api/october">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="username">Username:</label>
@@ -55,7 +41,7 @@
                     <button style="cursor:pointer" type="submit" class="btn btn-primary">Login</button>
                 </div>
             </form>
-        @endif
+        @endisset
         @include('errors')
     </div>
 @endsection

@@ -45,6 +45,9 @@
                         <li class="nav-item">
                             <a href="/scheduler" class="nav-link">Scheduler Demo</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="http://localhost:8000" class="nav-link">October CMS</a>
+                        </li>
 
                     </ul>
 

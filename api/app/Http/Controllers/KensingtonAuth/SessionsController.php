@@ -6,31 +6,36 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Adldap\Laravel\Facades\Adldap;
 use App\User;
+use App\Role;
 use App\Http\Controllers\Controller;
 
 class SessionsController extends Controller
 {
-    public $setLogin;
 
     public function setLoginType()
     {
         $loginType = request()->input();
-
-        if (array_key_exists("adlogin",$loginType))
+        if (array_key_exists("adLogin",$loginType))
         {
-            $this->setLogin = 'ad';
-            return back()->with('Login Type', 'ad');
+            return view('sessions.create', ['loginType' => 'Enterprise', 'setLogin' => '/login-kensington-enterprise']);
         }
-        else if (array_key_exists("locallogin",$loginType))
+        else if (array_key_exists("localLogin",$loginType))
         {
-            return back()->with('Login Type', 'local');
+            return view('sessions.create', ['loginType' => 'Local', 'setLogin' => '/login-kensington-local']);
         }
         return back();
     }
 
-    public function searchAd()
+    public function searchAd(Request $request)
     {
         $credentials = $this->validateInput();
+
+        // check if local user already exists for Ad user
+        if (Auth::attempt($credentials))
+        {
+            // return redirect()->to('/home');
+            return redirect()->intended('/home');
+        }
 
         // check if LDAP authentication fails
         if (Adldap::auth()->attempt($credentials['username'], $credentials['password']) == false)
@@ -40,17 +45,11 @@ class SessionsController extends Controller
             ]);
         }
 
-        // check if local user already exists for Ad user
-        if (Auth::attempt($credentials))
-        {
-            // return redirect()->to('/home');
-            return redirect()->intended('/home');
-        }
-
         // LDAP Authentication successful but no local user, create new one
         $userName = request('username');
         $userPassword = request('password');
         $ldapUser = Adldap::search()->users()->find($userName);
+
         // Get email attribute from LDAP server or create random email if needed (email field is required)
         if ($ldapUser->getAttribute('mail', 0) == null)
         {
@@ -61,11 +60,30 @@ class SessionsController extends Controller
             $userEmail= $ldapUser->getAttribute('mail', 0);
         }
 
+        $userGroups = $ldapUser->getGroups();
+        $role = null;
+
+        // Check all the users groups
+        foreach ($userGroups as $group) {
+            // If value matches create specified role (in this example developer)
+            if ($group->getCommonName() == 'Webdev')
+            {
+                $role = Role::where('name', 'developer')->first();
+            }
+        }
+        // if no matching groups are found set user role to a default (in this case local)
+        if(is_null($role))
+        {
+            $role = Role::where('name', 'local')->first();
+        }
+
         $user = new User();
         $user->username = $userName;
         $user->password = $userPassword;
         $user->email = $userEmail;
         $user->save();
+        $user->roles()->attach($role);
+
         auth()->login($user);
 
         return redirect()->intended('/home');
@@ -146,8 +164,8 @@ class SessionsController extends Controller
     protected function validateInput()
     {
         return request()->validate([
-            'username' => ['required', 'min:3'],
-            'password' => ['required', 'min:3']
+            'username' => ['required', 'string', 'max:255'],
+            'password' => ['required', 'string', 'min:3']
         ]);
     }
 }
