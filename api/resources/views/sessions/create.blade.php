@@ -4,11 +4,11 @@
     <div class="container">
 
         {{-- {{ session('Login Type')->has('ad') ? '/login-kensington-ad' : '/login-kensington-local' }} --}}
-        @if (session('Login Type'))
+        {{-- @if (session('Login Type'))
             <p>
                 {{ $setLogin->has('ad') ? 'HAS AD' : 'DOES NOT HAVE AD' }}
             </p>
-        @endif
+        @endif --}}
         <h2 class="text-center">Log In To Kensington!</h2>
 
         @if (session('Login Type'))

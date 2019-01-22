@@ -1,20 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Scheduler;
 
 use Illuminate\Http\Request;
 use App\Event;
+use App\Http\Controllers\Controller;
 
 class EventController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index(Request $request)
-    { 
-        $request->user()->authorizeRoles(['developer', 'editor', 'local']);
+    {
 
         $events = new Event();
 
@@ -28,8 +23,6 @@ class EventController extends Controller
 
     public function store(Request $request)
     {
-        $request->user()->authorizeRoles(['developer', 'editor', 'local']);
-
         $event = new Event();
 
         $event->text = strip_tags($request->text);
@@ -40,7 +33,7 @@ class EventController extends Controller
         $event->event_pid = $request->event_pid;
         $event->save();
 
-        //detect deleted recurring events 
+        //detect deleted recurring events
         $status = "inserted";
         if ($event->rec_type == "none") {
             $status = "deleted";
@@ -53,8 +46,8 @@ class EventController extends Controller
     }
 
     /**
-     * when user modifies or deletes a recurring series, we should delete 
-     * all modified occurrences of that series. It is required, because modified 
+     * when user modifies or deletes a recurring series, we should delete
+     * all modified occurrences of that series. It is required, because modified
      * occurrences are linked to the original ones via timestamps.
      */
     private function deleteRelated($event)
@@ -66,8 +59,6 @@ class EventController extends Controller
 
     public function update($id, Request $request)
     {
-        $request->user()->authorizeRoles(['developer', 'editor', 'local']);
-
         $event = Event::find($id);
 
         $event->text = strip_tags($request->text);
@@ -86,10 +77,8 @@ class EventController extends Controller
 
     public function destroy($id)
     {
-        $request->user()->authorizeRoles(['developer', 'editor', 'local']);
-        
         $event = RecurringEvent::find($id);
- 
+
         // delete the modified instance of the recurring series
         if ($event->event_pid) {
             $event->rec_type = "none";

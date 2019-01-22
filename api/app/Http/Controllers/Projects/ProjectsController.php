@@ -16,6 +16,7 @@ class ProjectsController extends Controller
         $this->middleware('auth');  // ->only(['store', 'update'])
                                     // ->except(['show'])
     }
+
     public function index()
     {
         // auth()->id();   // 4

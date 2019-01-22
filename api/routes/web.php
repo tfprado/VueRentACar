@@ -19,9 +19,7 @@
 //     return view('welcome');
 // });
 
-Route::get('/scheduler', function () {
-    return view('scheduler');
-});
+Route::get('/scheduler', 'Scheduler\SchedulerController@index');
 
 Route::get('/', 'PagesController@home'); //->middleware('can:update,project'); to authenticate if user can see a project here on the route file
 
