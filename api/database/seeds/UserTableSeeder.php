@@ -18,21 +18,21 @@ class UserTableSeeder extends Seeder
         $role_local = Role::where('name', 'local')->first();
 
         $developer = new User();
-        $developer->username = 'Developer Name';
+        $developer->username = 'tprado';
         $developer->email = 'developer@kensingtonhealth.org';
         $developer->password = 'secret';
         $developer->save();
         $developer->roles()->attach($role_developer);
 
         $editor = new User();
-        $editor->username = 'Editor Name';
+        $editor->username = 'editor';
         $editor->email = 'editor@kensingtonhealth.org';
         $editor->password = 'secret';
         $editor->save();
         $editor->roles()->attach($role_editor);
 
         $local = new User();
-        $local->username = 'Local User Name';
+        $local->username = 'Local User';
         $local->email = 'local@kensingtonhealth.org';
         $local->password = 'secret';
         $local->save();

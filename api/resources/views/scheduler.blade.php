@@ -4,6 +4,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 
     <script src="https://cdn.dhtmlx.com/scheduler/edge/dhtmlxscheduler.js"></script>
+    <script src="https://cdn.dhtmlx.com/scheduler/edge/ext/dhtmlxscheduler_recurring.js"></script>
     <link href="https://cdn.dhtmlx.com/scheduler/edge/dhtmlxscheduler.css" rel="stylesheet">
 
     <style type="text/css">
@@ -32,7 +33,18 @@
         <div class="dhx_cal_data"></div>
     </div>
     <script type="text/javascript">
-        scheduler.init("scheduler_here");
+    
+        scheduler.config.xml_date = "%Y-%m-%d %H:%i:%s";
+        //dynamic load
+        scheduler.setLoadMode("day"); 
+        
+        scheduler.init("scheduler_here", new Date(2018, 11, 3), "week");
+        
+        scheduler.load("/api/events", "json"); 
+        var dp = new dataProcessor("/api/events/"); 
+        dp.init(scheduler);
+        dp.setTransactionMode("REST");
+
 
     </script>
 </body>
