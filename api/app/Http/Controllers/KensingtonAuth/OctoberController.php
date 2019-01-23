@@ -38,7 +38,7 @@ class OctoberController extends Controller
                 // $user->save();
                 // dd($user);
                 return response()->json([
-                    "action" => "user found!",
+                    "message" => "user found!",
                 ]);
             }
             else

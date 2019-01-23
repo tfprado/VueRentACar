@@ -18,14 +18,7 @@ function onAuthSend()
 </div>
 
 <div class="container">
-    <form name="login" action="$(function(){
-  $('form[name=login]').submit(function(){
-    $.post('http://localhost:8080/api/octoer', $(this).serialize(), function(json) {
-      alert(json);
-    }, 'json');
-    return false;
-  });
-});">
+    <form id="login" name="login" action="http://localhost:8080/api/october">
         <div>
             <input type="text" name="username" placeholder="Username">
         </div>
@@ -35,7 +28,7 @@ function onAuthSend()
         </div>
 
         <div>  
-            <button type="submit">Login</button>
+            <button id="submit" name="submit" type="submit" onclick="sendForm()">Login</button>
         </div>
         <ul>
         	{% for error in errors.all() %}
@@ -45,25 +38,31 @@ function onAuthSend()
         	{% endfor %}
         </ul>
     </form>
+    
+    <p id="success" class="" role="alert"></p>
+    <p id="fail" class="" role="alert"></p>
 </div>
-<script>
-    $("#login").submit(function(event) {
 
-    var formData = new FormData();
-    formData.append("uploadFiles", $('[name="file"]')[0].files[0]);
-    event.stopPropagation();
-    event.preventDefault();
-    $.ajax({
-      url: $(this).attr("action"),
-      data: formData,
-      processData: false,
-      contentType: false,
-      type: 'POST',
-      success: function(data) {
-        alert(data);
-        loadFiles()
-      }
-    });
-    return false;
-  });
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+	function sendForm(){
+		$('#login').submit(function(){
+			$.post($(this).attr('action'), $(this).serialize(), function(json) {
+				response = JSON.stringify(json, null, 4);
+				//alert(str);
+				if (json.message == "user found!" )
+				{
+					document.getElementById("success").className = "alert alert-success";
+					document.getElementById("success").innerHTML = json.message;
+				}
+				else
+				{
+					document.getElementById("fail").className = "alert alert-danger";
+					document.getElementById("fail").innerHTML = json.message;	
+				}
+			}, 'json');
+			return false;
+		});
+	}
 </script>
