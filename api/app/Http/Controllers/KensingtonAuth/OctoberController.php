@@ -36,7 +36,7 @@ class OctoberController extends Controller
                 $user->password = $password;
                 $user->email = "tpradoTest@gmail.com";
                 // $user->save();
-                dd($user);
+                // dd($user);
                 return response()->json([
                     "action" => "user found!",
                 ]);

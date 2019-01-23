@@ -3,6 +3,13 @@ url = "/auth"
 layout = "default"
 is_hidden = 0
 ==
+<?php
+function onAuthSend()
+{
+
+}
+?>
+==
 {##}
 <div class="jumbotron">
     <div class="container">
@@ -11,7 +18,14 @@ is_hidden = 0
 </div>
 
 <div class="container">
-    <form method="POST" action="http://localhost:8080/api/october">
+    <form name="login" action="$(function(){
+  $('form[name=login]').submit(function(){
+    $.post('http://localhost:8080/api/octoer', $(this).serialize(), function(json) {
+      alert(json);
+    }, 'json');
+    return false;
+  });
+});">
         <div>
             <input type="text" name="username" placeholder="Username">
         </div>
@@ -32,3 +46,24 @@ is_hidden = 0
         </ul>
     </form>
 </div>
+<script>
+    $("#login").submit(function(event) {
+
+    var formData = new FormData();
+    formData.append("uploadFiles", $('[name="file"]')[0].files[0]);
+    event.stopPropagation();
+    event.preventDefault();
+    $.ajax({
+      url: $(this).attr("action"),
+      data: formData,
+      processData: false,
+      contentType: false,
+      type: 'POST',
+      success: function(data) {
+        alert(data);
+        loadFiles()
+      }
+    });
+    return false;
+  });
+</script>
