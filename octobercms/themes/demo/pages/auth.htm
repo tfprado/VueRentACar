@@ -3,13 +3,6 @@ url = "/auth"
 layout = "default"
 is_hidden = 0
 ==
-<?php
-function onAuthSend()
-{
-
-}
-?>
-==
 {##}
 <div class="jumbotron">
     <div class="container">
@@ -39,8 +32,7 @@ function onAuthSend()
         </ul>
     </form>
     
-    <p id="success" class="" role="alert"></p>
-    <p id="fail" class="" role="alert"></p>
+    <p id="msg" class="" role="alert"></p>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -53,13 +45,16 @@ function onAuthSend()
 				//alert(str);
 				if (json.message == "user found!" )
 				{
-					document.getElementById("success").className = "alert alert-success";
-					document.getElementById("success").innerHTML = json.message;
+					document.getElementById("msg").className = "alert alert-success";
+					document.getElementById("msg").innerHTML = json.message;
+					
+					//window.location.replace("http://localhost:8000"); //redirects to another page, similar to HTTP redirect
+					//window.location.href("http://localhost:8000"); //redirects to another page, similar to clicking on a link
 				}
 				else
 				{
-					document.getElementById("fail").className = "alert alert-danger";
-					document.getElementById("fail").innerHTML = json.message;	
+					document.getElementById("msg").className = "alert alert-danger";
+					document.getElementById("msg").innerHTML = json.message;	
 				}
 			}, 'json');
 			return false;

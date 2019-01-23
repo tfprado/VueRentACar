@@ -25,7 +25,8 @@
 
         @isset ($loginType)
             <h4> Currently authenticating as a {{ $loginType }} user</h4>
-            <form class="mt-3" method="POST" action="/api/october">
+            {{-- switch action="/api/october" for testing --}}
+            <form class="mt-3" method="POST" action="{{ $setLogin }}">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="username">Username:</label>

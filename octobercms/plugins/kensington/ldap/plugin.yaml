@@ -1,0 +1,6 @@
+plugin:
+    name: 'kensington.ldap::lang.plugin.name'
+    description: 'kensington.ldap::lang.plugin.description'
+    author: Kensington
+    icon: oc-icon-users
+    homepage: ''

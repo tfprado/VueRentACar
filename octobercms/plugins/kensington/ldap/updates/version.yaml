@@ -1,0 +1,5 @@
+1.0.1:
+    - Initialize plugin.
+1.0.2:
+    - Added two components, KensingtonLogin and TestLDAP.
+    - Updated composer.json file for latest AdLDAP2 version.
