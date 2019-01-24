@@ -58,6 +58,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
     && ln -s $(composer config --global home) /root/composer
 ENV PATH=$PATH:/root/composer/vendor/bin COMPOSER_ALLOW_SUPERUSER=1
 
-RUN usermod -u 1000 nginx
+RUN usermod -u 1000 www-data
 
-RUN chown -R nginx:nginx /var/www
+RUN chown -R www-data:www-data /var/www

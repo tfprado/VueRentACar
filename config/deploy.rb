@@ -48,7 +48,7 @@ namespace :deploy do
                 execute 'sudo','docker-compose', 'exec', '-w', '/var/www/html/octobercms', '-T', 'php', 'composer', 'install'
                 execute 'sudo','docker-compose', 'exec', '-w', '/var/www/html/octobercms', '-T', 'php', 'php', 'artisan', 'october:up'
                 execute 'sudo','docker-compose', 'exec', '-w', '/var/www/html/octobercms', '-T', 'php', 'php', 'artisan', 'october:update'
-                execute 'sudo','docker-compose', 'exec', '-w', '/var/www/html/octobercms', '-T', 'php', 'chown', '-R', 'nginx:nginx', 'storage'
+                execute 'sudo','docker-compose', 'exec', '-w', '/var/www/html/octobercms', '-T', 'php', 'chown', '-R', 'www-data:www-data', 'storage'
             end
         end
     end
