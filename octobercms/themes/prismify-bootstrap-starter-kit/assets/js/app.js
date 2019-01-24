@@ -1,4 +1,4 @@
-webpackJsonp([1],[
+webpackJsonp([0],[
 /* 0 */,
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -12952,24 +12952,25 @@ Popper.Defaults = Defaults;
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
-/* 3 */
+/* 3 */,
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(4);
-module.exports = __webpack_require__(6);
+__webpack_require__(5);
+module.exports = __webpack_require__(14);
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 window.$ = window.jQuery = __webpack_require__(1);
 
 __webpack_require__(2);
 
-__webpack_require__(5);
+__webpack_require__(6);
 
-window.Vue = __webpack_require__(8);
+window.Vue = __webpack_require__(3);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -12980,7 +12981,7 @@ window.Vue = __webpack_require__(8);
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', __webpack_require__(16).default); // Define a new component called todo-item
+Vue.component('example-component', __webpack_require__(10).default); // Define a new component called todo-item
 
 Vue.component('todo-item', {
   // The todo-item component now accepts a
@@ -13025,7 +13026,7 @@ $(function () {
 });
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -17280,30 +17281,18 @@ $(function () {
 
 
 /***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
 /* 7 */,
 /* 8 */,
 /* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(17)
+var normalizeComponent = __webpack_require__(11)
 /* script */
-var __vue_script__ = __webpack_require__(18)
+var __vue_script__ = __webpack_require__(12)
 /* template */
-var __vue_template__ = __webpack_require__(19)
+var __vue_template__ = __webpack_require__(13)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -17342,7 +17331,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 17 */
+/* 11 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -17451,7 +17440,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 18 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17479,7 +17468,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 19 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -17521,5 +17510,11 @@ if (false) {
   }
 }
 
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
 /***/ })
-],[3]);
+],[4]);

@@ -11439,6 +11439,18 @@ a.text-dark:focus {
   }
 }
 
+#fluid-id-bm30dikv-440 {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+}
+
+.infusion-header {
+  height: 7rem;
+  z-index: 2;
+}
+
 .the-intro {
   min-height: 100vh;
 }
