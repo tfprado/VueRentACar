@@ -65,6 +65,11 @@ return [
     */
 
     'providers' => [
+        // 'users' => [
+        //     'driver' => 'ldap', // Was 'eloquent'.
+        //     'model'  => App\User::class,
+        // ],
+
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,

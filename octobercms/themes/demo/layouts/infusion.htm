@@ -1,0 +1,81 @@
+description = "infusion tutorial"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Minimal Preference Editor</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="OctoberCMS">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="generator" content="OctoberCMS">
+        <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+        <link rel="stylesheet" href="{{ 'assets/infusion/css/style.css'|theme }}" />
+        {% styles %}
+
+        <!-- Theme Scripts -->
+        <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+
+        <!-- Pref Editor Scripts -->
+        <!-- <script src="{{ 'assets/infusion/src/lib/jquery/core/js/jquery.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/core/js/Fluid.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/core/js/FluidPromises.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/core/js/DataSource.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/core/js/FluidDocument.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/core/js/FluidRequests.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/core/js/FluidDOMUtilities.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/core/js/FluidIoC.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/core/js/DataBinding.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/core/js/RemoteModel.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/core/js/ModelTransformation.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/core/js/ModelTransformationTransforms.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/enhancement/js/ContextAwareness.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/core/js/FluidView.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/core/js/ResourceLoader.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/lib/fastXmlPull/js/fastXmlPull.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/renderer/js/fluidParser.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/core/js/MessageResolver.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/renderer/js/fluidRenderer.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/renderer/js/RendererUtilities.js'|theme }}"></script>
+
+        <script src="{{ 'assets/infusion/src/framework/preferences/js/Store.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/preferences/js/UIEnhancer.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/preferences/js/PrefsEditor.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/preferences/js/Panels.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/preferences/js/FullNoPreviewPrefsEditor.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/preferences/js/PrimaryBuilder.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/preferences/js/AuxBuilder.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/src/framework/preferences/js/Builder.js'|theme }}"></script> -->
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/infusion/2.0.0/infusion-all.min.js'></script>
+        <script src="{{ 'assets/infusion/schemas/primary.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/schemas/auxiliary.js'|theme }}"></script>
+        <script src="{{ 'assets/infusion/schemas/prefsEditor.js'|theme }}"></script>
+
+    </head>
+    <body>
+
+        <div class="awe-instructions">
+            <p>The Preference Editor below is an example of a minimal but fully functional preferences editor. It has:
+                <ul>
+                    <li>only one preference</li>
+                    <li>no enactor</li>
+                    <li>no localization (Note that this is not best practice!)</li>
+                    <li>Testing url: <a href="{{ 'assets/infusion/html/radioVolume.html'|theme }}">Theme</a></li>
+                </ul>
+                This code is the basis for the
+                <a href="http://docs.fluidproject.org/infusion/development/tutorial-prefsFramework/CreatingAPrefsEditor.html">Preferences
+                    Framework tutorial</a>.</p>
+        </div>
+
+        <!-- placeholder for the preferences editor -->
+        <div id="preferencesEditor"></div>
+
+        <script>
+            awesomeCars.prefs.init("#preferencesEditor");
+        </script>
+
+        {% scripts %}
+    </body>
+</html>

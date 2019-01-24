@@ -14,6 +14,7 @@ description = "Default layout"
         <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
         <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
         {% styles %}
+
     </head>
     <body>
 
@@ -32,12 +33,12 @@ description = "Default layout"
             {% partial 'site/footer' %}
         </footer>
 
-        <!-- Scripts -->
+        <!-- Theme Scripts -->
         <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
         <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
         <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         {% framework extras %}
         {% scripts %}
-
     </body>
 </html>

@@ -18,9 +18,10 @@
 
 //     return view('welcome');
 // });
+
+Route::get('/scheduler', 'Scheduler\SchedulerController@index');
+
 Route::get('/', 'PagesController@home'); //->middleware('can:update,project'); to authenticate if user can see a project here on the route file
-Route::get('/about', 'PagesController@about');
-Route::get('/contact', 'PagesController@contact');
 
 Auth::routes();
 
@@ -42,12 +43,32 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/projects/{project}/edit', 'ProjectsController@edit');
 // Route::patch('/projects/{project}', 'ProjectsController@update');
 // Route::delete('/projects/{project}', 'ProjectsController@destroy');
-Route::resource('/projects', 'ProjectsController');   // Same as the above lines
+Route::resource('/projects', 'Projects\ProjectsController');   // Same as the above lines
 
-Route::post('projects/{project}/tasks', 'ProjectTasksController@store');    // To add middleware here instead of in a controller
-Route::post('/completed-tasks/{task}', 'CompletedTasksController@store');   // ->middleware('auth')
-Route::delete('/completed-tasks/{task}', 'CompletedTasksController@destroy');
+Route::post('projects/{project}/tasks', 'Projects\ProjectTasksController@store');    // To add middleware here instead of in a controller
+Route::post('/completed-tasks/{task}', 'Projects\CompletedTasksController@store');   // ->middleware('auth')
+Route::delete('/completed-tasks/{task}', 'Projects\CompletedTasksController@destroy');
 
-Route::get('/test-ldap', function () {
-    return view('ldap');
-});
+// Route::get('/test-ldap', function () {
+//     return view('ldap');
+// });
+
+Route::get('/test-ldap', 'LdapController@index');
+Route::post('/ldap-login', 'LdapController@login');
+
+/**
+ * Kensington Registration and Sessions
+ */
+Route::get('/register-kensington', 'KensingtonAuth\RegistrationController@create');
+Route::post('/register-kensington', 'KensingtonAuth\RegistrationController@store');
+
+Route::get('/login-kensington', 'KensingtonAuth\SessionsController@create')->name('login-kensington');
+Route::post('/login-kensington', 'KensingtonAuth\SessionsController@store');
+Route::get('/logout-kensington', 'KensingtonAuth\SessionsController@destroy');
+
+Route::post('/login-kensington-enterprise', 'KensingtonAuth\SessionsController@searchAd');
+Route::post('/login-kensington-local', 'KensingtonAuth\SessionsController@getDbUser');
+// handles validation errors on form submit
+Route::get('/login-type', 'KensingtonAuth\SessionsController@create');
+Route::post('/login-type', 'KensingtonAuth\SessionsController@setLoginType');
+

@@ -1,0 +1,15 @@
+{
+    "name": "luketowers/oc-laravelpackagesexample-plugin",
+    "type": "october-plugin",
+    "description": "OctoberCMS plugin for LDAP authentication",
+    "homepage": "",
+    "authors": [
+        {
+            "name": "Thiago Prado",
+            "email": "tprado@kensingtonhealth.org"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    }
+}

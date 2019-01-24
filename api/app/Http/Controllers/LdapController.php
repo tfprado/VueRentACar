@@ -4,9 +4,26 @@ namespace App\Http\Controllers;
 
 use App\KensingtonUser;
 use Illuminate\Http\Request;
+use Adldap\Laravel\Facades\Adldap;
+use App\User;
+use App\Role;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LdapController extends Controller
 {
+    use AuthenticatesUsers;
+
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/home';
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +31,65 @@ class LdapController extends Controller
      */
     public function index()
     {
-        //
+        return view('ldap');
+    }
+
+    public function login()
+    {
+        $credentials = [
+            'username' => request('username'),
+            'password' => request('password'),
+        ];
+        // $ldapUser = Adldap::search()->users()->find($credentials['username']);
+        // dd($ldapUser);
+        if (Adldap::auth()->attempt(request('username'), request('password')))
+        {
+            $ldapUser = Adldap::search()->users()->find($credentials['username']);
+            $userGroups = $ldapUser->getGroups();
+            $role = null;
+            foreach ($userGroups as $group) {
+                if ($group->getCommonName() == 'Webdev')
+                {
+                    $role = Role::where('name', 'developer')->first();
+                }
+            }
+            if(is_null($role))
+            {
+                $role = Role::where('name', 'local')->first();
+            }
+            dd($role);
+            $userName = $credentials['username'];
+            $userPassword = $credentials['password'];
+            if ($ldapUser->getAttribute('mail', 0) == null)
+            {
+                $userEmail = 'noemail@gmail.com';
+            }
+            else
+            {
+                $userEmail= $ldapUser->getAttribute('mail', 0);
+            }
+
+            $user = new User();
+            $user->username = $userName;
+            // $user->password = Hash::make($userPassword);
+            $user->password = $userPassword;
+            $user->email = $userEmail;
+            if (auth()->login($user))
+            {
+                dd($user);
+            }
+            else
+            {
+                dd('no login');
+            }
+            // $user->save();
+            // $user = User::create([$userName, $userEmail, $userPassword]);
+
+            // auth()->login($user);
+        }
+
+        dd('failed authentication');
+        return view('ldap');
     }
 
     /**

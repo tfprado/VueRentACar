@@ -41,9 +41,7 @@
                     cols="30" rows="10" 
                     class="input {{ $errors->has('description') ? 'is-danger' : '' }}" 
                     required
-                >
-                    {{ old('description') }}
-                </textarea>
+                >{{ old('description') }}</textarea>
             </div>
         </div>
 
