@@ -1,3 +1,4 @@
+# version: '3.7'  // to use -w to set path on docker exec. Have to test how this impacts the project
 version: '3'
 services:
   db:
