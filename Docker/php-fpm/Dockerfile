@@ -61,4 +61,4 @@ ENV PATH=$PATH:/root/composer/vendor/bin COMPOSER_ALLOW_SUPERUSER=1
 RUN usermod -u 1000 www-data
 
 RUN chown -R www-data:www-data /var/www
-RUN chmod -R 755 /var/www/storage
+RUN chmod -R 755 /var/www/html/octobercms/storage/logs
