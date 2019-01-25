@@ -20,8 +20,8 @@ namespace :deploy do
             within release_path do
                 execute :cp, "/var/www/kensingtonCms/secret/.env-root #{release_path}/.env"
                 execute :cp, "/var/www/kensingtonCms/secret/.env-october #{release_path}/octobercms/.env"
-                execute :cp, "/var/www/kensingtonCms/secret/system.log #{release_path}/octobercms/storage/logs/system.log"
-                execute :cp, "/var/www/kensingtonCms/secret/capistrano.log #{release_path}/octobercms/storage/logs/capistrano.log"
+                # execute :cp, "/var/www/kensingtonCms/secret/system.log #{release_path}/octobercms/storage/logs/system.log"
+                # execute :cp, "/var/www/kensingtonCms/secret/capistrano.log #{release_path}/octobercms/storage/logs/capistrano.log"
                 execute :cp, "/var/www/kensingtonCms/secret/.env-laravel #{release_path}/api/.env"
                 execute :cp, "/var/www/kensingtonCms/secret/docker-compose.yml #{release_path}/docker-compose.yml"
                 execute 'sudo', 'chown', '-R', 'thedeployer:nginx', '/var/www/kensingtonCms/'
