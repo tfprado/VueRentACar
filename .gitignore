@@ -2,3 +2,6 @@
 .DS_Store
 docker-compose.yml
 docker-compose-dev.yml
+.scannerwork
+sonar-project.properties
+.vscode
