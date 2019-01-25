@@ -1,0 +1,25 @@
+fields:
+
+    type:
+        label: vojtasvoboda.proeventspreview::lang.settings_calendar_type
+        default: fullcalendaraggregated
+        required: true
+        type: dropdown
+
+    firstDay:
+        label: vojtasvoboda.proeventspreview::lang.settings_first_day
+        default: "0"
+        comment: vojtasvoboda.proeventspreview::lang.settings_first_day_comment
+        type: text
+
+    timeFormat:
+        label: vojtasvoboda.proeventspreview::lang.settings_time_format
+        default: "HH:mm"
+        type: text
+        comment: vojtasvoboda.proeventspreview::lang.settings_time_format_comment
+
+    showPastEvents:
+        label: vojtasvoboda.proeventspreview::lang.settings_past_events
+        default: false
+        type: switch
+        comment: vojtasvoboda.proeventspreview::lang.settings_past_events_comment
