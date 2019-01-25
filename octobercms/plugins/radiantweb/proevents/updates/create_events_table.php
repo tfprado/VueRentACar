@@ -30,7 +30,7 @@ class CreateEventsTable extends Migration
             $table->text('status')->nullable();
             $table->timestamps();
         });
-        
+
         Schema::create('radiantweb_generated_dates', function($table)
         {
             $table->engine = 'InnoDB';

@@ -2,5 +2,6 @@
     "cSpell.words": [
         "kensington"
     ],
-    "php.suggest.basic": false
+    "php.suggest.basic": false,
+    "git.ignoreLimitWarning": true
 }
