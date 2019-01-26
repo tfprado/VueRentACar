@@ -11,7 +11,7 @@
 
 Includes cloning the git repository and creating a docker-compose.yml and .env files for your project.
 
-* `git clone URL my-app-name`
+* `git clone Repo-URL my-app-name`
 * Copy `.env-example` contents into a `.env` file in the root directory.
 ```
 DB_HOST=db
