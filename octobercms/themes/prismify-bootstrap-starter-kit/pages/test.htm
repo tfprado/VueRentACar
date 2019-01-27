@@ -1,24 +1,27 @@
 title = "test"
 url = "/test"
 layout = "default"
-description = "testing mix"
+description = "testing vue"
 is_hidden = 0
+
+[contenteditor]
+file = "test.htm"
+
+[session]
+security = "user"
+allowedUserGroups[] = "registered"
+redirect = "login"
 ==
-{##}
-<div id="app">
-    {% content 'test' %}
-    <!--<h1>Value of test: {% verbatim %} {{ data }} {% endverbatim %}</h1> #}-->
-    <ol>
-	    <!--
-      Now we provide each todo-item with the todo object
-      it's representing, so that its content can be dynamic.
-      We also need to provide each component with a "key",
-      which will be explained later.
-    -->
-    <todo-item
-      v-for="item in groceryList"
-      v-bind:todo="item"
-      v-bind:key="item.id"
-    ></todo-item>
-    </ol>
+<?php
+function onStart()
+{
+	$this->addJs('assets/js/vue.js');
+}
+?>
+==
+<div class="container">
+	{% content 'vue' %}
+	{% component 'contenteditor' file="test.htm" %}
 </div>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>

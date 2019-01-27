@@ -12998,24 +12998,19 @@ var data = {
    * the page. Then, you may begin adding components to this application
    * or customize the JavaScript scaffolding to fit your unique needs.
    */
+  // const app = new Vue({
+  //     el: '#app',
+  //     data: {
+  //         groceryList: [
+  //             { id: 0, text: 'Vegetables' },
+  //             { id: 1, text: 'Cheese' },
+  //             { id: 2, text: 'Whatever else humans are supposed to eat' }
+  //         ],
+  //         data
+  //     }
+  // });
 
 };
-var app = new Vue({
-  el: '#app',
-  data: {
-    groceryList: [{
-      id: 0,
-      text: 'Vegetables'
-    }, {
-      id: 1,
-      text: 'Cheese'
-    }, {
-      id: 2,
-      text: 'Whatever else humans are supposed to eat'
-    }],
-    data: data
-  }
-});
 $(function () {
   // Shorthand for $( document ).ready()
   "use strict"; // Your js script is below this line
