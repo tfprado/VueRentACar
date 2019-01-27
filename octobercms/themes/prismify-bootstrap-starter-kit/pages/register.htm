@@ -1,0 +1,24 @@
+title = "Register"
+url = "/register"
+layout = "default"
+is_hidden = 0
+
+[account]
+redirect = "index"
+paramCode = "code"
+forceSecure = 0
+==
+<div class="container">
+    {% if not user %}
+    <div class="row">
+        <div class="col-md-6">{% partial account ~ '::register' %}</div>
+    </div>
+
+    <div class="row">
+        {% else %} 
+            {% partial account ~ '::activation_check' %} 
+            {% partial account ~ '::update' %} 
+            {% partial account ~'::deactivate_link' %} 
+        {% endif %}
+    </div>
+</div>

@@ -6,6 +6,11 @@ is_hidden = 0
 
 [contenteditor]
 file = "test.htm"
+
+[session]
+security = "user"
+allowedUserGroups[] = "registered"
+redirect = "login"
 ==
 <?php
 function onStart()
