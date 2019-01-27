@@ -16,8 +16,7 @@
 
 ### Other Links
 
-* [Active Directory/AdLDAP](adldap/ldap.md)
-* [Current Sprint](logs/sprint-timeline.md)
+* [Search bar](search/README.md)
 * [Page Restrictions](unsorted/PageRestriction.md)
 * [Back-End Forms](backend/forms.md)
 * [Front-End Forms](unsorted/Forms.md)
