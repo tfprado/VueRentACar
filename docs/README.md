@@ -17,6 +17,7 @@
 ### Other Links
 
 * [Search bar](search/README.md)
+* [Seeding with routes](seeding/README.md)
 * [Page Restrictions](unsorted/PageRestriction.md)
 * [Back-End Forms](backend/forms.md)
 * [Front-End Forms](unsorted/Forms.md)
