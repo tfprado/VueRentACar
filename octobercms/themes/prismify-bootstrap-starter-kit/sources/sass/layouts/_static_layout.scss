@@ -1,7 +1,7 @@
 // ======================================================================== //
 //
-// Name:            Infusion
-// Description:     Styles specific for infusion preference editor
+// Name:            Default static layout
+// Description:     Styles specific for static pages default layout
 //
 // ======================================================================== //
 
@@ -12,20 +12,6 @@
 // Layout: Default
 // ======================================================================== //
 
-.layout-default{
+.layout-static-layout{
     padding-top: 8.125rem;
-}
-
-// Section: Preference Editor and navbar
-// ------------------------------------------------------------------------ //
-#fluid-id-bm30dikv-440 {
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    width: 100%;
-}
-
-.infusion-header {
-    height: 7rem;
-    z-index: 2;
 }
