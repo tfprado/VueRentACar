@@ -1,0 +1,12 @@
+columns:
+    name:
+        label: Service
+        type: text
+        searchable: true
+        sortable: true
+    clinic:
+        label: Clinic
+        relation: clinic
+        select: clinic_title
+        searchable: true
+        sortable: true

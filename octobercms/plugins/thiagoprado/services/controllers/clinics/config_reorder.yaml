@@ -1,0 +1,4 @@
+title: Clinics
+modelClass: ThiagoPrado\Services\Models\Clinic
+toolbar:
+    buttons: reorder_toolbar

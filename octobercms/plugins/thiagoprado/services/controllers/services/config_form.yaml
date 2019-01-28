@@ -1,0 +1,10 @@
+name: Services
+form: $/thiagoprado/services/models/service/fields.yaml
+modelClass: ThiagoPrado\Services\Models\Service
+defaultRedirect: thiagoprado/services/services
+create:
+    redirect: 'thiagoprado/services/services/update/:id'
+    redirectClose: thiagoprado/services/services
+update:
+    redirect: thiagoprado/services/services
+    redirectClose: thiagoprado/services/services

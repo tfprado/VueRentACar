@@ -1,0 +1,12 @@
+columns:
+    name:
+        label: Name
+        type: text
+        searchable: true
+        sortable: true
+    description:
+        label: Description
+        type: partial
+        path: ~/plugins/thiagoprado/services/models/expectation/_description.htm
+        searchable: true
+        sortable: true

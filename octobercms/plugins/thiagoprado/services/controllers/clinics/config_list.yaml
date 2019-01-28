@@ -1,0 +1,12 @@
+list: $/thiagoprado/services/models/clinic/columns.yaml
+modelClass: ThiagoPrado\Services\Models\Clinic
+title: Clinics
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'thiagoprado/services/clinics/update/:id'
