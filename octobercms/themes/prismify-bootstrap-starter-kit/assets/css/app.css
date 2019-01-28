@@ -11486,10 +11486,6 @@ a.text-dark:focus {
   display: block;
 }
 
-.layout-default {
-  padding-top: 8.125rem;
-}
-
 #fluid-id-bm30dikv-440 {
   position: fixed;
   top: 0;
@@ -11500,6 +11496,14 @@ a.text-dark:focus {
 .infusion-header {
   height: 7rem;
   z-index: 2;
+}
+
+.layout-default {
+  padding-top: 8.125rem;
+}
+
+.layout-static-layout {
+  padding-top: 8.125rem;
 }
 
 .the-intro {
