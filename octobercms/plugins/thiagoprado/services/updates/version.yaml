@@ -1,0 +1,41 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table thiagoprado_services_'
+    - builder_table_create_thiagoprado_services_.php
+1.0.3:
+    - 'Updated table thiagoprado_services_'
+    - builder_table_update_thiagoprado_services_.php
+1.0.4:
+    - 'Updated table thiagoprado_services_'
+    - builder_table_update_thiagoprado_services__2.php
+1.0.5:
+    - 'Created table thiagoprado_services_clinic'
+    - builder_table_create_thiagoprado_services_clinic.php
+1.0.6:
+    - 'Created table thiagoprado_services_clinic_pivot'
+    - builder_table_create_thiagoprado_services_clinic_pivot.php
+1.0.7:
+    - 'Drop table thiagoprado_services_services_clinic'
+    - builder_table_delete_thiagoprado_services_services_clinic.php
+1.0.8:
+    - 'Updated table thiagoprado_services_'
+    - builder_table_update_thiagoprado_services__3.php
+1.0.9:
+    - 'Updated table thiagoprado_services_'
+    - builder_table_update_thiagoprado_services__4.php
+1.0.10:
+    - 'Created table thiagoprado_services_expectations'
+    - builder_table_create_thiagoprado_services_expectations.php
+1.0.11:
+    - 'Updated table thiagoprado_services_'
+    - builder_table_update_thiagoprado_services__5.php
+1.0.12:
+    - 'Created table thiagoprado_services_exp_pivot'
+    - builder_table_create_thiagoprado_services_exp_pivot.php
+1.0.13:
+    - 'Updated table thiagoprado_services_expectations'
+    - builder_table_update_thiagoprado_services_expectations.php
+1.0.14:
+    - 'Drop table thiagoprado_services_expectations_pivot'
+    - builder_table_delete_thiagoprado_services_expectations_pivot.php

@@ -1,0 +1,4 @@
+title: Expectation
+modelClass: ThiagoPrado\Services\Models\Expectation
+toolbar:
+    buttons: reorder_toolbar

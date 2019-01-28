@@ -1,0 +1,6 @@
+columns:
+    clinic_title:
+        label: Clinic
+        type: text
+        searchable: true
+        sortable: true

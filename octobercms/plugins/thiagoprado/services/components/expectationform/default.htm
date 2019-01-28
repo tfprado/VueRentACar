@@ -1,0 +1,22 @@
+{##}
+    <h4 style="text-align: center;">Add Expectations</h4>
+
+    <form name="qryform" id="qryform" data-request="onSave">
+
+      <div class="form-group">
+          <label>Title:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter Expectation" name="name">
+      </div>
+
+      <div class="form-group">
+          <label>Description</label>
+          <textarea name="description" class="form-control" id="description" placeholder="Enter description here:"></textarea>
+      </div>
+  
+      <button type="submit" class="btn btn-default">Submit</button>
+
+      {% flash success %}
+        <p> {{ message }} </p>
+      {% endflash %}
+
+    </form>

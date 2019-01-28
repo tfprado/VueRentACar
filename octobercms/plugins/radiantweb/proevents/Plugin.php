@@ -63,7 +63,7 @@ class Plugin extends PluginBase
                 return [
                     'title' => $item->title,
                     'text' => $item->content,
-                    'url' => '/events/',
+                    'url' => '/event/' . $item->slug . '/' . $item->id,
                     // 'thumb' => $item->images->first(), // Instance of System\Models\File
                     'relevance' => $relevance, // higher relevance results in a higher
                                            // position in the results listing

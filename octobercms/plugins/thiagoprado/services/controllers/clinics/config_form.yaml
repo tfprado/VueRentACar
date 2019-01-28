@@ -1,0 +1,10 @@
+name: Clinics
+form: $/thiagoprado/services/models/clinic/fields.yaml
+modelClass: ThiagoPrado\Services\Models\Clinic
+defaultRedirect: thiagoprado/services/clinics
+create:
+    redirect: 'thiagoprado/services/clinics/update/:id'
+    redirectClose: thiagoprado/services/clinics
+update:
+    redirect: thiagoprado/services/clinics
+    redirectClose: thiagoprado/services/clinics
