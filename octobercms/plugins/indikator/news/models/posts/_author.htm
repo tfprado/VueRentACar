@@ -1,5 +1,0 @@
-<?php
-
-if ($record->user_id > 0) {
-    echo Backend\Models\User::whereId($record->user_id)->value('login');
-}

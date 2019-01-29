@@ -1,6 +1,0 @@
-plugin:
-    name: 'thiagoprado.contact::lang.plugin.name'
-    description: 'thiagoprado.contact::lang.plugin.description'
-    author: 'Thiago Prado'
-    icon: oc-icon-mail-forward
-    homepage: ''

@@ -30,10 +30,11 @@ services:
       context: ./Docker/nginx
     ports:
       - "8000:80"
-      - "8080:8080"
+      - "8001:81"
+      - "8002:82"
     volumes:
       - ./octobercms:/var/www/html/octobercms
+      - ./kensington:/var/www/html/kensington
       - ./api:/var/www/html/api
     links:
       - php
-

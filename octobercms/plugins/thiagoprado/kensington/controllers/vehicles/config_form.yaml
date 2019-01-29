@@ -1,0 +1,10 @@
+name: Vehicles
+form: $/thiagoprado/kensington/models/vehicle/fields.yaml
+modelClass: Thiagoprado\Kensington\Models\Vehicle
+defaultRedirect: thiagoprado/kensington/vehicles
+create:
+    redirect: 'thiagoprado/kensington/vehicles/update/:id'
+    redirectClose: thiagoprado/kensington/vehicles
+update:
+    redirect: thiagoprado/kensington/vehicles
+    redirectClose: thiagoprado/kensington/vehicles

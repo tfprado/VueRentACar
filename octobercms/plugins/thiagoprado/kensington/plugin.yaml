@@ -1,0 +1,11 @@
+plugin:
+    name: 'thiagoprado.kensington::lang.plugin.name'
+    description: 'thiagoprado.kensington::lang.plugin.description'
+    author: ThiagoPrado
+    icon: oc-icon-sitemap
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Vehicles
+        url: thiagoprado/kensington/vehicles
+        icon: icon-car
