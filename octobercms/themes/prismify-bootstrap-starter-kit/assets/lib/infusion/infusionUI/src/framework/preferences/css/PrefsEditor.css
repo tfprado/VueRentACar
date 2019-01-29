@@ -14,7 +14,7 @@
   list-style: none;
 }
 .fl-prefsEditor label {
-  font-size: 1.2em;
+  font-size: .9em;
 }
 .fl-prefsEditor input[type="text"] {
   width: 2em;

@@ -1,7 +1,4 @@
-description = "Default layout"
-
-[session]
-security= "all"
+description = "Using infusionUI to style preference editor"
 ==
 {##}
 <!doctype html>
@@ -17,24 +14,23 @@ security= "all"
         <link href="{{ [
             'assets/css/app.css',
             'assets/css/font-awesome.css',
-            'assets/lib/infusion/src/lib/normalize/css/normalize.css',
-            'assets/lib/infusion/src/framework/core/css/fluid.css',
-            'assets/lib/infusion/src/framework/preferences/css/Enactors.css',
-            'assets/lib/infusion/src/framework/preferences/css/PrefsEditor.css',
-            'assets/lib/infusion/src/framework/preferences/css/SeparatedPanelPrefsEditor.css'
+            'assets/lib/infusion/infusionUI/src/lib/normalize/css/normalize.css',
+            'assets/lib/infusion/infusionUI/src/framework/core/css/fluid.css',
+            'assets/lib/infusion/infusionUI/src/framework/preferences/css/Enactors.css',
+            'assets/lib/infusion/infusionUI/src/framework/preferences/css/PrefsEditor.css',
+            'assets/lib/infusion/infusionUI/src/framework/preferences/css/SeparatedPanelPrefsEditor.css'
         ]|theme }}" rel="stylesheet">
         {% styles %}
         <title>{% if this.page.title %}{{ this.page.title }}{% else %}{{ this.theme.meta_title }}{% endif %} - {{ this.theme.website_name }}</title>
     </head>
     <body class="layout-{{ this.layout.id }} page-{{ this.page.id }}">
-
         <!-- Start of Infusion Preference Editor -->
         <div class="flc-prefsEditor-separatedPanel fl-prefsEditor-separatedPanel" id="fluid-id">
             <!-- This is the div that will contain the Preference Editor component -->
             <div class="flc-slidingPanel-panel flc-prefsEditor-iframe" id="fluid-id-bm30dikv-546" aria-label="User Preferences"
                 role="group" aria-expanded="false" style="height: 0px;">
                 <a href="/" class="fa fa-home fa-2x bg-light" 
-                style="color:black; margin-left: 3.125rem;text-decoration: none;">
+                style="color:black; margin-left: 3.125rem;text-decoration: none;" aria-hidden="true">
                 </a>
             </div>
             <!-- This div is for the sliding panel that shows and hides the Preference Editor controls -->
@@ -70,7 +66,8 @@ security= "all"
         <script src="{{'assets/js/manifest.js'|theme}}"></script>
         <script src="{{'assets/js/vendor.js'|theme}}"></script>
         <script src="{{'assets/js/app.js'|theme}}"></script>
-        <script src="{{'assets/lib/infusion/infusion-all.js'|theme}}"></script>
+        <!-- <script src="{{'assets/lib/infusion/infusion-all.js'|theme}}"></script> -->
+        <script src="{{'assets/lib/infusion/infusionUI/infusion-uiOptions.js'|theme}}"></script>
 
         <!-- Initialize the UI Options Javascript -->
         <script type="text/javascript">
