@@ -1,15 +1,12 @@
 <template>
   <v-app>
-    <v-toolbar nav id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">Test</router-link>
-    </v-toolbar>
+    <!-- <NavBar/> -->
+    <DevNav/>
     <v-content>
-      <router-view/>
+        <router-view/>
     </v-content>
   </v-app>
 </template>
-
 
 <style lang="scss">
 #nav {
@@ -23,3 +20,14 @@
   }
 }
 </style>
+
+<script>
+import NavBar from '@/components/NavBar'
+import DevNav from '@/components/DevNav'
+export default {
+  components: {
+    NavBar,
+    DevNav
+  }
+}
+</script>
