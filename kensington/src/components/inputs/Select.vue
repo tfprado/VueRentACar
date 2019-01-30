@@ -1,33 +1,12 @@
 <template>
-  <v-container fluid grid-list-xl>
+  <v-container fluid grid-list-xl class="pa-3 white">
+    <div class="text-xs-left">State:</div>
     <v-layout wrap align-center>
-      <v-flex xs12 sm6 d-flex>
+      <v-flex xs12 d-flex class="pb-0">
         <v-select
+          append-icon='fa-caret-down'
           :items="items"
-          label="Standard"
-        ></v-select>
-      </v-flex>
-
-      <v-flex xs12 sm6 d-flex>
-        <v-select
-          :items="items"
-          box
-          label="Box style"
-        ></v-select>
-      </v-flex>
-
-      <v-flex xs12 sm6 d-flex>
-        <v-select
-          :items="items"
-          label="Outline style"
-          outline
-        ></v-select>
-      </v-flex>
-
-      <v-flex xs12 sm6 d-flex>
-        <v-select
-          :items="items"
-          label="Solo field"
+          label="New Mexico"
           solo
         ></v-select>
       </v-flex>
@@ -37,8 +16,11 @@
 
 <script>
   export default {
+    props: {
+      label
+    },
     data: () => ({
-      items: ['Foo', 'Bar', 'Fizz', 'Buzz']
+      items: ['Washington', 'New York', 'Texas', 'Vermont']
     })
   }
 </script>

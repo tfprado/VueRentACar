@@ -1,7 +1,7 @@
 <template>
     <v-btn id="test" small
     :class="{'grey': dark, 'grey lighten-5': !dark}">
-        <v-icon>home</v-icon>
+        <v-icon>fa-home</v-icon>
     </v-btn>
 </template>
 
