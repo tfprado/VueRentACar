@@ -1,0 +1,6 @@
+columns:
+    title:
+        label: 'Location Name'
+        type: text
+        searchable: true
+        sortable: true

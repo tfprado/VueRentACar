@@ -6,3 +6,12 @@
 1.0.3:
     - 'Created table thiagoprado_kensington_vehicles'
     - builder_table_create_thiagoprado_kensington_vehicles.php
+1.0.4:
+    - 'Created table thiagoprado_kensington_locations'
+    - builder_table_create_thiagoprado_kensington_locations.php
+1.0.5:
+    - 'Created table thiagoprado_kensington_ve_lo'
+    - builder_table_create_thiagoprado_kensington_ve_lo.php
+1.0.6:
+    - 'Drop table thiagoprado_kensington_ve_lo'
+    - builder_table_delete_thiagoprado_kensington_ve_lo.php

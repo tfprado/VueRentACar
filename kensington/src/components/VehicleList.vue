@@ -16,8 +16,5 @@ export default {
       return this.$store.getters.allVehicles
     }
   },
-  mounted () {
-    this.$store.dispatch('getVehicles')
-  }
 }
 </script>

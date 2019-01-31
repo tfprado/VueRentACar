@@ -1,0 +1,12 @@
+fields:
+    title:
+        label: 'Location Name'
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text

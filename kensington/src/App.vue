@@ -28,6 +28,10 @@ export default {
   components: {
     NavBar,
     DevNav
+  },
+  mounted () {
+    this.$store.dispatch('getLocations'),
+    this.$store.dispatch('getVehicles')
   }
 }
 </script>

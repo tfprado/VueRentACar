@@ -9,3 +9,8 @@ navigation:
         label: Vehicles
         url: thiagoprado/kensington/vehicles
         icon: icon-car
+        sideMenu:
+            side-menu-item:
+                label: Location
+                url: thiagoprado/kensington/locations
+                icon: icon-home

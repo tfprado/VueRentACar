@@ -1,0 +1,10 @@
+name: Locations
+form: $/thiagoprado/kensington/models/location/fields.yaml
+modelClass: Thiagoprado\Kensington\Models\Location
+defaultRedirect: thiagoprado/kensington/locations
+create:
+    redirect: 'thiagoprado/kensington/locations/update/:id'
+    redirectClose: thiagoprado/kensington/locations
+update:
+    redirect: thiagoprado/kensington/locations
+    redirectClose: thiagoprado/kensington/locations

@@ -2,15 +2,11 @@
     <v-app>
       <v-content id="content">
         <v-container fluid text-xs-center>
-          <v-layout row wrap>
-            <v-flex xs12>
-              <!-- <vehicle-list :vehicles="vehicles"/> :value is the name of the prop, should = the name of data -->
-              <vehicle-list/>
-
-            </v-flex>
-            <!-- <v-flex sx12> -->
+          <v-layout row wrap justify-center fill-height>
+            <v-flex sx12></v-flex>
+            <v-flex sx12>
               <ReservationForm/>
-            <!-- </v-flex> -->
+            </v-flex>
           </v-layout>
         </v-container>
       </v-content>

@@ -20,4 +20,15 @@ class Vehicle extends Model
      */
     public $rules = [
     ];
+
+    /**
+     * Relations
+     */
+    public $belongsToMany = [
+        'locations' => [
+            'Thiagoprado\Kensington\Models\Location',
+            'table' => 'thiagoprado_kensington_vehicles_locations',
+            'order' => 'title'
+        ]
+    ];
 }

@@ -1,13 +1,12 @@
 <template>
-  <v-container fluid grid-list-xl class="pa-3 white">
-    <div class="text-xs-left">State:</div>
+  <v-container fluid grid-list-xl>
     <v-layout wrap align-center>
       <v-flex xs12 d-flex class="pb-0">
         <v-select
           append-icon='fa-caret-down'
-          :items="items"
-          label="New Mexico"
-          solo
+          :items="options"
+          :label="label"
+          item-text="label"
         ></v-select>
       </v-flex>
     </v-layout>
@@ -17,10 +16,14 @@
 <script>
   export default {
     props: {
-      label
+      label: {
+        type: String,
+        default: ''
+      },
+      options: {
+        type: Array,
+        required: true
+      }
     },
-    data: () => ({
-      items: ['Washington', 'New York', 'Texas', 'Vermont']
-    })
   }
 </script>
