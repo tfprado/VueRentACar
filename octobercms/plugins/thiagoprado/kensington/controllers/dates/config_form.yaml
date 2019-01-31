@@ -1,0 +1,10 @@
+name: Dates
+form: $/thiagoprado/kensington/models/date/fields.yaml
+modelClass: Thiagoprado\Kensington\Models\Date
+defaultRedirect: thiagoprado/kensington/dates
+create:
+    redirect: 'thiagoprado/kensington/dates/update/:id'
+    redirectClose: thiagoprado/kensington/dates
+update:
+    redirect: thiagoprado/kensington/dates
+    redirectClose: thiagoprado/kensington/dates

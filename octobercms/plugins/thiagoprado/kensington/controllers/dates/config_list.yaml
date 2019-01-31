@@ -1,0 +1,12 @@
+list: $/thiagoprado/kensington/models/date/columns.yaml
+modelClass: Thiagoprado\Kensington\Models\Date
+title: Dates
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'thiagoprado/kensington/dates/update/:id'

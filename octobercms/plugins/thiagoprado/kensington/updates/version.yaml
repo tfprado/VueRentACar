@@ -10,8 +10,20 @@
     - 'Created table thiagoprado_kensington_locations'
     - builder_table_create_thiagoprado_kensington_locations.php
 1.0.5:
-    - 'Created table thiagoprado_kensington_ve_lo'
-    - builder_table_create_thiagoprado_kensington_ve_lo.php
+    - 'Created table thiagoprado_kensington_vehicles_locations'
+    - builder_table_create_thiagoprado_kensington_vehicles_locations.php
 1.0.6:
-    - 'Drop table thiagoprado_kensington_ve_lo'
-    - builder_table_delete_thiagoprado_kensington_ve_lo.php
+    - 'Updated table thiagoprado_kensington_vehicles'
+    - builder_table_update_thiagoprado_kensington_vehicles.php
+1.0.7:
+    - 'Updated table thiagoprado_kensington_vehicles'
+    - builder_table_update_thiagoprado_kensington_vehicles_2.php
+1.0.8:
+    - 'Updated table thiagoprado_kensington_vehicles'
+    - builder_table_update_thiagoprado_kensington_vehicles_3.php
+1.0.9:
+    - 'Created table thiagoprado_kensington_dates'
+    - builder_table_create_thiagoprado_kensington_dates.php
+1.0.10:
+    - 'Created table thiagoprado_kensington_vehicles_dates'
+    - builder_table_create_thiagoprado_kensington_vehicles_dates.php

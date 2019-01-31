@@ -1,26 +1,33 @@
 <template>
-    <v-layout align-center justify-center row fill-height class="mt-5">
-      <v-flex sx4></v-flex>
-      <v-flex sx4 class="pa-3 white">
-        <InputSelect :label="'Pickup Location:'" :options="locations"/>
-        <VehicleList/>
-      </v-flex>
-      <v-flex sx4></v-flex>
-    </v-layout>
+  <v-flex sx4 md6 class="pa-3 white mt-1" id="reservationFormContainer">
+    <InputSelect :label="'Choose your pickup location:'" :options="locations" @onSelect="filterVehicles"/>
+  </v-flex>
 </template>
+
+<style>
+#reservationFormContainer{
+  max-height: 10em;
+}
+</style>
 
 <script>
 import InputSelect from '@/components/inputs/Select'
-import VehicleList from '@/components/VehicleList'
 
 export default {
   components: {
-    InputSelect,
-    VehicleList
+    InputSelect
   },
   computed: {
     locations () {
       return this.$store.getters.allLocations
+    }
+  },
+  methods: {
+    filterVehicles (value) {
+      this.$store.dispatch('filterVehicles', +value)
+    },
+    filterVehiclesOnApi (value) {
+      this.$store.dispatch('filterOnApi', +value)
     }
   }
 }

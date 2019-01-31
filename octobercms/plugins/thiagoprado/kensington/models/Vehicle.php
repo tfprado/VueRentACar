@@ -8,7 +8,7 @@ use Model;
 class Vehicle extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
 
     /**
      * @var string The database table used by the model.
@@ -30,5 +30,9 @@ class Vehicle extends Model
             'table' => 'thiagoprado_kensington_vehicles_locations',
             'order' => 'title'
         ]
+    ];
+
+    public $attachOne = [
+        'image' => 'System\Models\File'
     ];
 }

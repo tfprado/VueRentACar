@@ -18,7 +18,7 @@ class BuilderTableCreateThiagopradoKensingtonVehicles extends Migration
             $table->timestamp('updated_at')->nullable();
         });
     }
-    
+
     public function down()
     {
         Schema::dropIfExists('thiagoprado_kensington_vehicles');

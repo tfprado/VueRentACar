@@ -1,11 +1,11 @@
 <template>
-  <v-app>
+  <div>
       <v-content>
           <custom-button dark/>
           <custom-button/>
           <HelloWorld/>
       </v-content>
-  </v-app>
+  </div>
 </template>
 
 <script>

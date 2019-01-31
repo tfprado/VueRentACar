@@ -3,7 +3,7 @@
     <!-- <NavBar/> -->
     <DevNav/>
     <v-content>
-        <router-view/>
+      <router-view/>
     </v-content>
   </v-app>
 </template>
@@ -19,6 +19,10 @@
     }
   }
 }
+#content {
+  background-color:lightgray;
+  height: 20em;
+}
 </style>
 
 <script>
@@ -30,7 +34,7 @@ export default {
     DevNav
   },
   mounted () {
-    this.$store.dispatch('getLocations'),
+    this.$store.dispatch('getLocations')
     this.$store.dispatch('getVehicles')
   }
 }

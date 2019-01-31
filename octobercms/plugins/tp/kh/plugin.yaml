@@ -1,0 +1,6 @@
+plugin:
+    name: 'tp.kh::lang.plugin.name'
+    description: 'tp.kh::lang.plugin.description'
+    author: TP
+    icon: oc-icon-ambulance
+    homepage: ''
