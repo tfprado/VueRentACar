@@ -1,23 +1,9 @@
 <template>
   <v-app>
-    <!-- Start of Infusion Preference Editor -->
-    <div class="flc-prefsEditor-separatedPanel fl-prefsEditor-separatedPanel" id="fluid-id-bm30dikv-440">
-      <!-- This is the div that will contain the Preference Editor component -->
-      <div class="flc-slidingPanel-panel flc-prefsEditor-iframe" id="fluid-id-bm30dikv-546" aria-label="User Preferences"
-        role="group" aria-expanded="false" style="height: 0px;"></div>
-      <!-- This div is for the sliding panel that shows and hides the Preference Editor controls -->
-      <div class="fl-panelBar">
-        <span class="fl-prefsEditor-buttons">
-          <button id="reset" class="flc-prefsEditor-reset fl-prefsEditor-reset"><span class="fl-icon-undo"></span>
-            Reset</button>
-          <button id="show-hide" class="flc-slidingPanel-toggleButton fl-prefsEditor-showHide"> Show/Hide</button>
-        </span>
-      </div>
-    </div>
-    <!-- End of Preference Editor -->
-    <!-- <NavBar/> -->
-    <DevNav/>
-    <v-content>
+    
+    <NavBar/>
+    <!-- <DevNav/> -->
+    <v-content class="mt-5">
       <router-view/>
     </v-content>
   </v-app>
@@ -41,17 +27,20 @@
 </style>
 
 <script>
+/* eslint-disable */
 import NavBar from '@/components/NavBar'
 import DevNav from '@/components/DevNav'
+import PreferenceEditor from '@/components/kh/PreferenceEditor'
+
 export default {
   components: {
     NavBar,
-    DevNav
+    DevNav,
+    PreferenceEditor
   },
   mounted () {
     this.$store.dispatch('getLocations')
     this.$store.dispatch('getVehicles')
-    $(document).trigger('vue-loaded')
   }
 }
 </script>

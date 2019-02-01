@@ -9,7 +9,7 @@
     </v-container>
     <v-container>
       <v-layout row wrap>
-         <v-flex sx12 md12 class="pt-5">
+         <v-flex sx12 class="pt-5">
           <VehicleList filtered/>
         </v-flex>
       </v-layout>

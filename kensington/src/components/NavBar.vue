@@ -1,6 +1,7 @@
 <template>
-  <nav class="mb-5">
-    <v-toolbar app dense id="nav" class="pa-5">
+  <div>
+    <preference-editor class="hidden-xs-only"></preference-editor>
+    <v-toolbar app dense class="pa-5 mt-4 mb-5 white">
       <div class="">
         <v-img
           :src="require('@/assets/images/kensington-health-logo.png')"
@@ -25,7 +26,6 @@
             <v-list-tile
               v-for="(item, index) in items"
               :key="index"
-              @click=""
             >
               <v-list-tile-title>{{ item.title }}</v-list-tile-title>
             </v-list-tile>
@@ -35,22 +35,16 @@
         <v-btn flat class="custom-btn">Foundation</v-btn>
       </v-toolbar-items>
       <v-spacer></v-spacer>
-      <v-btn dark small color="#f8bf16"> <span class="font-weight-bold" style="font-size: 20px;">Donate</span></v-btn>
+      <search-dialog></search-dialog>
+      <v-divider vertical></v-divider>
+      <search-text></search-text>
+      <v-divider vertical inset></v-divider>
+      <v-btn dark small color="#f8bf16"> <span class="font-weight-bold title">Donate</span></v-btn>
     </v-toolbar>
-  </nav>
+  </div>
 </template>
 
 <style lang="scss">
-#nav {
-  background-color: #fff;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 .custom-btn {
   font-size: 19px;
   font-weight: bolder;
@@ -72,7 +66,16 @@
 </style>
 
 <script>
+import PreferenceEditor from '@/components/kh/PreferenceEditor'
+import SearchDialog from '@/components/inputs/SearchInputDialog'
+import SearchText from '@/components/inputs/SearchInputText'
+
 export default {
+  components: {
+    PreferenceEditor,
+    SearchDialog,
+    SearchText
+  },
   data: () => ({
     items: [
       { title: 'Click Me' },
