@@ -4,7 +4,7 @@ use ThiagoPrado\Kensington\Models\Vehicle;
 use ThiagoPrado\Kensington\Models\Location;
 
 Route::get('vehicles', function() {
-    $vehicles = Vehicle::with(['locations', 'image'])->get();
+    $vehicles = Vehicle::with(['locations', 'image', 'dates'])->get();
     return $vehicles;
 });
 

@@ -29,6 +29,11 @@ class Vehicle extends Model
             'Thiagoprado\Kensington\Models\Location',
             'table' => 'thiagoprado_kensington_vehicles_locations',
             'order' => 'title'
+        ],
+        'dates' => [
+            'Thiagoprado\Kensington\Models\Date',
+            'table' => 'thiagoprado_kensington_vehicles_dates',
+            'order' => 'pickup'
         ]
     ];
 
