@@ -1,8 +1,8 @@
 <template>
   <v-card class="">
     <v-layout row wrap>
-      <v-flex xs4 class="pa-3 mt-1">
-        <InputSelect :label="'Choose your pickup location:'" :options="locations" @onSelect="filterVehicles"/>
+      <v-flex xs3 class="pa-3 mt-1">
+        <InputSelect :label="'Choose your pickup location:'" :options="locations" @onSelect="setLocation"/>
       </v-flex>
       <v-flex xs2 class="pa-3 mt-1">
         <v-menu
@@ -22,7 +22,7 @@
             prepend-icon="event"
             readonly
           ></v-text-field>
-          <v-date-picker v-model="pickupDate" @input="menu1 = false"></v-date-picker>
+          <v-date-picker :min="todaysDate" v-model="pickupDate" @input="menu1 = false, setDate($event, 'pickup')"></v-date-picker>
         </v-menu>
       </v-flex>
       <v-flex xs2 class="pa-3 mt-1">
@@ -50,7 +50,7 @@
             v-if="timeMenu1"
             v-model="pickupTime"
             full-width
-            @change="$refs.pickupMenu.save(pickupTime)"
+            @change="$refs.pickupMenu.save(pickupTime), setTime($event, 'pickup')"
           ></v-time-picker>
         </v-menu>
       </v-flex>
@@ -72,7 +72,7 @@
             prepend-icon="event"
             readonly
           ></v-text-field>
-          <v-date-picker v-model="dropoffDate" @input="menu2 = false"></v-date-picker>
+          <v-date-picker :min="now" v-model="dropoffDate" @input="menu2 = false, setDate($event, 'dropoff')"></v-date-picker>
         </v-menu>
       </v-flex>
       <v-flex xs2 class="pa-3 mt-1">
@@ -100,10 +100,15 @@
             v-if="timeMenu2"
             v-model="dropoffTime"
             full-width
-            @change="$refs.dropoffMenu.save(dropoffTime)"
+            @change="$refs.dropoffMenu.save(dropoffTime), setTime($event, 'dropoff')"
           ></v-time-picker>
         </v-menu>
       </v-flex>
+      <v-layout align-center>
+        <v-flex xs1 class="pa-3 mt-1">
+          <v-btn @click="filterVehicles" color="success">Filter Vehicles</v-btn>
+        </v-flex>
+      </v-layout>
     </v-layout>
   </v-card>
 </template>
@@ -130,14 +135,35 @@ export default {
   computed: {
     locations () {
       return this.$store.getters.allLocations
+    },
+    todaysDate () {
+      const toTwoDigits = num => num < 10 ? '0' + num : num
+      let today = new Date()
+      let year = today.getFullYear()
+      let month = toTwoDigits(today.getMonth() + 1)
+      let day = toTwoDigits(today.getDate())
+      return `${year}-${month}-${day}`
+    },
+    now () {
+      const date = new Date(Date.now())
+      return date.toISOString()
     }
   },
   methods: {
-    filterVehicles (value) {
-      this.$store.dispatch('filterVehicles', +value)
+    filterVehicles () {
+      this.$store.dispatch('filterVehicles')
     },
     filterVehiclesOnApi (value) {
       this.$store.dispatch('filterOnApi', +value)
+    },
+    setLocation (value) {
+      this.$store.dispatch('setLocation', +value)
+    },
+    setDate (value, type) {
+      this.$store.dispatch('setDates', {value, type })
+    },
+    setTime (value, type) {
+      this.$store.dispatch('setTimes', {value, type })
     }
   }
 }
